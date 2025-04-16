@@ -457,6 +457,8 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 0; /* Ensure no negative margin */
+  z-index: 1; /* Ensure proper stacking */
 }
 
 /* Remove the left and right sections that were used with the video */

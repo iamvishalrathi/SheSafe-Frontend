@@ -57,31 +57,31 @@ const Home = () => {
       },
     });
   });
+  
+  // Modify this animation to prevent overlap
   useGSAP(() => {
     gsap.to(".video", {
       y: 100,
       scale: 1.8,
-      // duration:0.3,
       transformOrigin: "left bottom",
-      // opacity:0,
       scrollTrigger: {
         trigger: ".hero",
         start: "top top",
         end: "bottom top",
-        // markers:true,
         scrub: 1,
       },
     });
   });
-  useGSAP(() => {
-    ScrollTrigger.create({
-      trigger: ".about-this",
-      start: "top 30%",
-      end: "bottom bottom",
-      pin: ".video",
-      // markers: true,
-    });
-  });
+  
+  // Remove or modify this pin to prevent overlap
+  // useGSAP(() => {
+  //   ScrollTrigger.create({
+  //     trigger: ".about-this",
+  //     start: "top 30%",
+  //     end: "bottom bottom",
+  //     pin: ".video",
+  //   });
+  // });
 
   // New animation for the feature sections
   useGSAP(() => {
@@ -93,7 +93,7 @@ const Home = () => {
       scrollTrigger: {
         trigger: ".about-this",
         start: "top 70%",
-        end: "bottom bottom",
+        end: "center center",
         scrub: 1,
       },
     });
@@ -133,6 +133,9 @@ const Home = () => {
             </button>
           </div>
         </div>
+
+        {/* Add a spacer to prevent overlap */}
+        <div className="h-[100vh]"></div>
 
         {/* Redesigned about-this section with title */}
         <div className="about-this">
