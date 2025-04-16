@@ -9,6 +9,10 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import RippleButton from "../components/RippleButton";
 import Image from "../components/Image";
 import Footer from "../components/Footer";
+// Add this import at the top
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShieldAlt, faEye, faChartLine } from "@fortawesome/free-solid-svg-icons";
+
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const Home = () => {
   useGSAP(() => {
@@ -73,8 +77,24 @@ const Home = () => {
     });
   });
 
+  // New animation for the feature sections
+  useGSAP(() => {
+    gsap.from(".page", {
+      opacity: 0,
+      y: 50,
+      stagger: 0.3,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".about-this",
+        start: "top 70%",
+        end: "bottom bottom",
+        scrub: 1,
+      },
+    });
+  });
+
   return (
-    <>
+    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothTouch: true }}>
       <div className="main">
         {/* content */}
         <div className="hero">
@@ -95,28 +115,26 @@ const Home = () => {
               fill="black"
             />
           </svg>
+
+          <div className="hero-cta mt-8">
+            <RippleButton text="Get Started" />
+            <button className="text-white border border-white px-6 py-2 rounded-md ml-4 hover:bg-white hover:text-black transition-all duration-300">
+              Learn More
+            </button>
+          </div>
         </div>
 
-        {/* <hr /> */}
-        <div className="about-this">
-          <div className="left">
-            <div className="video">
-              <video
-                src="/landingpage.mp4"
-                controls={false}
-                autoPlay
-                loop
-                muted
-                className=" rounded-lg"
-              ></video>
-            </div>
-          </div>
-          <div className="right">
-            <div className="page page-1 ">
-              <h2 className=" text-2xl font-bold text-white ">
-                Empowering Women's Safety with AI
-              </h2>
-              <p className="text-lg font-semibold tracking-wide leading-8 text-white my-3 pr-2">
+        {/* Redesigned about-this section without video */}
+        <div className="about-this flex flex-col items-center py-20">
+          <div className="features-container max-w-4xl mx-auto">
+            <div className="page page-1 mb-16 p-8 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-lg shadow-lg">
+              <div className="flex items-center mb-4">
+                <FontAwesomeIcon icon={faShieldAlt} className="text-3xl text-[#218EA6] mr-4" />
+                <h2 className="text-3xl font-bold text-white">
+                  Empowering Women's Safety with AI
+                </h2>
+              </div>
+              <p className="text-lg font-semibold tracking-wide leading-8 text-white my-3">
                 SafeWatch is an AI-driven platform designed to enhance women's
                 safety in public spaces. By leveraging real-time monitoring,
                 anomaly detection, and gesture recognition, our system
@@ -124,24 +142,32 @@ const Home = () => {
                 ensuring a safer environment for women everywhere.
               </p>
             </div>
-            <div className="page page-2">
-              <h2 className=" text-2xl font-bold text-white ">
-                Real-Time Threat Detection
-              </h2>
-              <p className="text-lg font-semibold tracking-wide leading-8 text-white my-3 pr-2">
+            
+            <div className="page page-2 mb-16 p-8 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-lg shadow-lg">
+              <div className="flex items-center mb-4">
+                <FontAwesomeIcon icon={faEye} className="text-3xl text-[#218EA6] mr-4" />
+                <h2 className="text-3xl font-bold text-white">
+                  Real-Time Threat Detection
+                </h2>
+              </div>
+              <p className="text-lg font-semibold tracking-wide leading-8 text-white my-3">
                 Our innovative solution combines advanced computer vision and
                 machine learning to monitor gender distribution and recognize
                 unusual patterns. SafeWatch continuously analyzes public areas,
                 identifying risks such as lone women at night or women
                 surrounded by men, and generates immediate alerts to prevent
-                incidents
+                incidents.
               </p>
             </div>
-            <div className="page page-3">
-              <h2 className=" text-2xl font-bold text-white ">
-                Data-Driven Safety Planning
-              </h2>
-              <p className="text-lg font-semibold tracking-wide leading-8 text-white my-3 pr-2">
+            
+            <div className="page page-3 mb-16 p-8 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-lg shadow-lg">
+              <div className="flex items-center mb-4">
+                <FontAwesomeIcon icon={faChartLine} className="text-3xl text-[#218EA6] mr-4" />
+                <h2 className="text-3xl font-bold text-white">
+                  Data-Driven Safety Planning
+                </h2>
+              </div>
+              <p className="text-lg font-semibold tracking-wide leading-8 text-white my-3">
                 SafeWatch goes beyond real-time protection by offering
                 data-driven insights through hotspot mapping. By identifying
                 areas with frequent incidents, our platform enables city
@@ -151,10 +177,28 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        <div className="stats-section py-16 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a]">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Our Impact</h2>
+          <div className="flex justify-center gap-16">
+            <div className="stat-item text-center">
+              <h3 className="text-4xl font-bold text-white mb-2">95%</h3>
+              <p className="text-lg text-white">Accuracy Rate</p>
+            </div>
+            <div className="stat-item text-center">
+              <h3 className="text-4xl font-bold text-white mb-2">500+</h3>
+              <p className="text-lg text-white">Incidents Prevented</p>
+            </div>
+            <div className="stat-item text-center">
+              <h3 className="text-4xl font-bold text-white mb-2">24/7</h3>
+              <p className="text-lg text-white">Monitoring</p>
+            </div>
+          </div>
+        </div>
         <Image />
       </div>
       <Footer />
-    </>
+    </ReactLenis>
   );
 };
 
