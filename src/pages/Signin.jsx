@@ -54,7 +54,15 @@ const Signin = () => {
       setIsLoading(true);
       
       try {
-        // Simulate API call
+        // Check for test credentials
+        if (formData.email === "test123@gmail.com" && formData.password === "test123") {
+          console.log("Test login successful");
+          // Redirect to home page for test user
+          navigate("/");
+          return;
+        }
+        
+        // Simulate API call for other users
         await new Promise(resolve => setTimeout(resolve, 1000));
         
         // For demo purposes - in a real app, you'd verify with your backend
