@@ -34,7 +34,7 @@ const Event = () => {
         severity: "high",
         status: "resolved",
         coordinates: { lat: 28.6139, lng: 77.2090 },
-        imageUrl: "/images/event1.jpg",
+        imageUrl: "https://images.unsplash.com/photo-1517697471339-4aa32003c11a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80",
         details: "Security personnel were dispatched and escorted the woman safely to her destination. The group of men dispersed upon security arrival."
       },
       {
@@ -46,7 +46,7 @@ const Event = () => {
         severity: "medium",
         status: "monitoring",
         coordinates: { lat: 28.6129, lng: 77.2295 },
-        imageUrl: "/images/event2.jpg",
+        imageUrl: "https://images.unsplash.com/photo-1517732306149-e8f829eb588a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80",
         details: "System detected a 9:1 male to female ratio during off-peak hours. Station security was notified to increase patrols in the area."
       },
       {
@@ -58,7 +58,7 @@ const Event = () => {
         severity: "high",
         status: "resolved",
         coordinates: { lat: 28.5355, lng: 77.2410 },
-        imageUrl: "/images/event3.jpg",
+        imageUrl: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
         details: "Mall security responded within 2 minutes. The woman was being harassed by an individual who was subsequently removed from the premises."
       },
       {
@@ -70,7 +70,7 @@ const Event = () => {
         severity: "medium",
         status: "resolved",
         coordinates: { lat: 28.6304, lng: 77.2177 },
-        imageUrl: "/images/event4.jpg",
+        imageUrl: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
         details: "Event security created a safe passage and designated women-only areas to ensure safety during the concert."
       },
       {
@@ -82,7 +82,7 @@ const Event = () => {
         severity: "low",
         status: "monitoring",
         coordinates: { lat: 28.6139, lng: 77.2090 },
-        imageUrl: "/images/event5.jpg",
+        imageUrl: "https://images.unsplash.com/photo-1531319842102-fd3d0d923fd4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
         details: "Patrol car dispatched to area for preventative monitoring. Woman reached her destination safely."
       },
       {
@@ -94,7 +94,7 @@ const Event = () => {
         severity: "high",
         status: "resolved",
         coordinates: { lat: 28.5921, lng: 77.2290 },
-        imageUrl: "/images/event6.jpg",
+        imageUrl: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
         details: "Bus driver was alerted and stopped at nearest police station. Perpetrator was detained and victim provided support."
       }
     ];
@@ -251,11 +251,11 @@ const Event = () => {
               >
                 <div className="h-48 overflow-hidden relative">
                   <img 
-                    src={event.imageUrl || "/images/default-event.jpg"} 
+                    src={event.imageUrl} 
                     alt={event.title}
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      e.target.src = "/images/default-event.jpg";
+                      e.target.src = "https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1129&q=80";
                     }}
                   />
                   <div className={`absolute top-4 right-4 ${getSeverityColor(event.severity)} text-white text-xs font-bold px-2 py-1 rounded-full`}>
@@ -301,11 +301,11 @@ const Event = () => {
           <div className="bg-[#2a2a2a] rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
             <div className="relative">
               <img 
-                src={selectedEvent.imageUrl || "/images/default-event.jpg"} 
+                src={selectedEvent.imageUrl} 
                 alt={selectedEvent.title}
                 className="w-full h-64 object-cover rounded-t-xl"
                 onError={(e) => {
-                  e.target.src = "/images/default-event.jpg";
+                  e.target.src = "https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1129&q=80";
                 }}
               />
               <button 
