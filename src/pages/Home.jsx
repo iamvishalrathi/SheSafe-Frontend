@@ -124,17 +124,18 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Redesigned about-this section without video */}
-        <div className="about-this flex flex-col items-center py-20">
-          <div className="features-container max-w-4xl mx-auto">
-            <div className="page page-1 mb-16 p-8 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-lg shadow-lg">
+        {/* Redesigned about-this section with title */}
+        <div className="about-this">
+          <h2 className="section-title">Our Mission</h2>
+          <div className="features-container">
+            <div className="page page-1 mb-16">
               <div className="flex items-center mb-4">
                 <FontAwesomeIcon icon={faShieldAlt} className="text-3xl text-[#218EA6] mr-4" />
-                <h2 className="text-3xl font-bold text-white">
+                <h2 className="text-3xl font-bold">
                   Empowering Women's Safety with AI
                 </h2>
               </div>
-              <p className="text-lg font-semibold tracking-wide leading-8 text-white my-3">
+              <p className="text-lg font-semibold tracking-wide leading-8 my-3">
                 SafeWatch is an AI-driven platform designed to enhance women's
                 safety in public spaces. By leveraging real-time monitoring,
                 anomaly detection, and gesture recognition, our system

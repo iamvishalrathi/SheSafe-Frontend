@@ -447,12 +447,37 @@ nav {
   color: white;
 }
 
-/* Update the about-this section styles */
+/* Improved about-this section */
 .about-this {
   width: 100%;
-  min-height: 100vh;
-  padding: 4rem 1rem;
+  min-height: auto;
+  padding: 6rem 1rem;
   background-color: #1a1a1a;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-this::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(33, 142, 166, 0.1), transparent 60%);
+  pointer-events: none;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+  font-family: "Open Sans", sans-serif;
 }
 
 .features-container {
@@ -461,19 +486,22 @@ nav {
   margin: 0 auto;
 }
 
-/* Consolidated page styles */
+/* Consolidated page styles with improved animations */
 .page {
   border-left: 3px solid #218EA6;
-  padding-left: 1.5rem;
+  padding: 1.5rem 2rem;
   margin-bottom: 2.5rem;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  background-color: rgba(30, 30, 30, 0.7);
+  border-radius: 0 8px 8px 0;
 }
 
 .page:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.3);
+  border-left-width: 5px;
 }
 
 .page::before {
@@ -495,11 +523,27 @@ nav {
 .page h2 {
   position: relative;
   z-index: 1;
+  margin-bottom: 1rem;
+  color: white;
+  font-family: "Open Sans", sans-serif;
 }
 
 .page p {
   position: relative;
   z-index: 1;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .page {
+    padding: 1.25rem;
+  }
 }
 
 /* Stats section enhancements */
