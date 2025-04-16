@@ -1,4 +1,6 @@
 import "./App.css";
+import 'leaflet/dist/leaflet.css';  // Make sure this is at the top
+
 import Contact from "./pages/Contact";
 import Event from "./pages/Event";
 import Home from "./pages/Home";
