@@ -452,24 +452,28 @@ nav {
   width: 100%;
   min-height: 100vh;
   padding: 4rem 1rem;
+  background-color: #1a1a1a;
 }
 
 .features-container {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Consolidated page styles */
 .page {
-  border-left: 4px solid #218EA6;
+  border-left: 3px solid #218EA6;
   padding-left: 1.5rem;
   margin-bottom: 2.5rem;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
 .page:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
 .page::before {
@@ -502,6 +506,7 @@ nav {
 .stats-section {
   position: relative;
   overflow: hidden;
+  padding: 3rem 1rem;
 }
 
 .stats-section::before {
