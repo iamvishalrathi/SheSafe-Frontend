@@ -1,4 +1,3 @@
-import React from "react";
 import "../App.css";
 import { ReactLenis } from "@studio-freight/react-lenis";
 // import { useRef } from 'react';
@@ -12,6 +11,7 @@ import Footer from "../components/Footer";
 // Add this import at the top
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShieldAlt, faEye, faChartLine } from "@fortawesome/free-solid-svg-icons";
+import Eyes from "../components/Home/eye";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const Home = () => {
@@ -36,6 +36,12 @@ const Home = () => {
         opacity: 0,
         stagger: 0.2,
         ease: "power2.inOut",
+      })
+      .from(".eye-container", {
+        scale: 0,
+        opacity: 0,
+        duration: 0.8,
+        ease: "elastic.out(1, 0.5)",
       });
   });
 
@@ -102,6 +108,10 @@ const Home = () => {
             Empowering Safety Through Real-Time Insights <br />
             Protecting Women with Advanced Analytics
           </p>
+          {/* Eye animation below the title */}
+          <div className="eye-container flex justify-center my-6">
+            <Eyes />
+          </div>
           <h1>Safe Watch</h1>
           <svg
             width="28"
@@ -143,7 +153,7 @@ const Home = () => {
                 ensuring a safer environment for women everywhere.
               </p>
             </div>
-            
+
             <div className="page page-2 mb-16 p-8 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-lg shadow-lg">
               <div className="flex items-center mb-4">
                 <FontAwesomeIcon icon={faEye} className="text-3xl text-[#218EA6] mr-4" />
@@ -160,7 +170,7 @@ const Home = () => {
                 incidents.
               </p>
             </div>
-            
+
             <div className="page page-3 mb-16 p-8 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-lg shadow-lg">
               <div className="flex items-center mb-4">
                 <FontAwesomeIcon icon={faChartLine} className="text-3xl text-[#218EA6] mr-4" />
