@@ -12,6 +12,7 @@ import Footer from "../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShieldAlt, faEye, faChartLine } from "@fortawesome/free-solid-svg-icons";
 import Eyes from "../components/Home/eye";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 const Home = () => {
@@ -128,9 +129,11 @@ const Home = () => {
 
           <div className="hero-cta mt-8">
             <RippleButton text="Get Started" />
-            <button className="text-white border border-white px-6 py-2 rounded-md ml-4 hover:bg-white hover:text-black transition-all duration-300">
-              Learn More
-            </button>
+            <Link to="/contact">
+              <button className="text-white border border-white px-6 py-2 rounded-md ml-4 hover:bg-white hover:text-black transition-all duration-300">
+                Learn More
+              </button>
+            </Link>
           </div>
         </div>
 
