@@ -31,7 +31,7 @@ const Home = () => {
         stagger: 0.3,
         ease: "power2.inOut",
       })
-      .from(".hero p, .video", {
+      .from(".hero p", { // Removed video from this animation
         yPercent: 10,
         opacity: 0,
         stagger: 0.2,

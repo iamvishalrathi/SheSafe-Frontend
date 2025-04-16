@@ -447,11 +447,11 @@ nav {
   color: white;
 }
 
-/* Improved about-this section */
+/* about-this section - updated */
 .about-this {
   width: 100%;
   min-height: auto;
-  padding: 6rem 1rem;
+  padding: 6rem 1rem 4rem;
   background-color: #1a1a1a;
   position: relative;
   display: flex;
@@ -459,15 +459,24 @@ nav {
   align-items: center;
 }
 
-.about-this::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Remove the left and right sections that were used with the video */
+.about-this .left,
+.about-this .video {
+  display: none;
+}
+
+.about-this .right {
   width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at top right, rgba(33, 142, 166, 0.1), transparent 60%);
-  pointer-events: none;
+  height: auto;
+  padding-top: 0;
+}
+
+/* Ensure features container takes full width */
+.features-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 2;
 }
 
 .section-title {
