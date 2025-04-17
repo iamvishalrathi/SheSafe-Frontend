@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import Eyes from "../components/Eyes";
 import HotspotMap from "../components/HotspotMap";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 
@@ -80,8 +79,6 @@ const Live = () => {
 
   return (
     <div className="min-h-screen w-full bg-[#2C2C2C] p-6 flex flex-col gap-6 text-white">
-      {/* Eyes Animation */}
-      <Eyes />
 
       {/* Top 3 Columns */}
       <div className="flex gap-4">
