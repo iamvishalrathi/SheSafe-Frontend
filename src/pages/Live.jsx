@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import Eyes from "../components/Eyes";
 import HotspotMap from "../components/HotspotMap";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+
 
 import VideoFeed from "../components/VideoFeed.jsx";
 import Piegraph from "../components/Piegraph.jsx";
@@ -167,15 +169,15 @@ const Live = () => {
         </div>
       </div>
 
-      {/* Hotspot Map Section
-      <div className="w-full bg-[#3A3A3A] rounded-xl p-4 shadow-lg">
-        <div className="text-xl font-semibold mb-4 flex items-center gap-2">
-          <FontAwesomeIcon icon={faMapLocationDot} />
-          <span>Alert Hotspot Map</span>
-        </div>
-        {renderMap()}
+     {/* Hotspot Map Section */}
+<div className="w-full bg-[#3A3A3A] rounded-xl p-4 shadow-lg">
+  <div className="text-xl font-semibold mb-4 flex items-center gap-2">
+    <FontAwesomeIcon icon={faMapMarkerAlt} />
+    <span>Hotspot Locations Map</span>
+  </div>
+  <HotspotMap />
+</div>
 
-      </div> */}
       
     </div>
   );
