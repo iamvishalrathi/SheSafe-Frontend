@@ -3,7 +3,6 @@ import Eyes from "../components/Eyes";
 import HotspotMap from "../components/HotspotMap";
 import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 
-
 import VideoFeed from "../components/VideoFeed.jsx";
 import Piegraph from "../components/Piegraph.jsx";
 import Alert from "./Alert.jsx";
@@ -27,12 +26,22 @@ const Live = () => {
     "https://via.placeholder.com/300x150.png?text=Alert+3",
   ]);
   const galleryRef = useRef(null);
+  const [Alerts, setAlerts] = useState([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       fetch("http://localhost:5000/gender_count")
         .then((res) => res.json())
         .then((data) => setGenderCounts(data));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch("http://localhost:5000/alerts")
+        .then((res) => res.json())
+        .then((data) => setAlerts(data));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -122,8 +131,8 @@ const Live = () => {
             <span>Alerts</span>
           </div>
           <div className="flex flex-col gap-2 w-full overflow-y-auto h-[460px] pr-2">
-            {[...Array(6)].map((_, i) => (
-              <Alert key={i} />
+            {Alerts.map((alert, i) => (
+              <Alert key={i} lat={alert["lat"]} lng={alert["lng"]} />
             ))}
           </div>
         </div>
@@ -169,18 +178,17 @@ const Live = () => {
         </div>
       </div>
 
-     {/* Hotspot Map Section */}
-<div className="w-full bg-[#3A3A3A] rounded-xl p-4 shadow-lg">
-  <div className="text-xl font-semibold mb-4 flex items-center gap-2">
-    <FontAwesomeIcon icon={faMapMarkerAlt} />
-    <span>Hotspot Locations Map</span>
-  </div>
-  <HotspotMap />
-</div>
-
-      
+      {/* Hotspot Map Section */}
+      <div className="w-full bg-[#3A3A3A] rounded-xl p-4 shadow-lg">
+        <div className="text-xl font-semibold mb-4 flex items-center gap-2">
+          <FontAwesomeIcon icon={faMapMarkerAlt} />
+          <span>Hotspot Locations Map</span>
+        </div>
+        <HotspotMap />
+      </div>
     </div>
   );
 };
 
 export default Live;
+
