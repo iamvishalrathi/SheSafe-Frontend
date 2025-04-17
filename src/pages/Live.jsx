@@ -72,9 +72,9 @@ const Live = () => {
   const [mapError, setMapError] = useState(false);
 
   // Add error boundary for map
-  const renderMap = () => {
+  const renderMap = (Alerts) => {
     try {
-      return <HotspotMap />;
+      return <HotspotMap Alerts={Alerts} />;
     } catch (error) {
       console.error("Map rendering error:", error);
       setMapError(true);
@@ -88,7 +88,6 @@ const Live = () => {
 
   return (
     <div className="min-h-screen w-full bg-[#2C2C2C] p-6 flex flex-col gap-6 text-white">
-
       {/* Top 3 Columns */}
       <div className="flex gap-4">
         {/* Video */}
@@ -181,11 +180,10 @@ const Live = () => {
           <FontAwesomeIcon icon={faMapMarkerAlt} />
           <span>Hotspot Locations Map</span>
         </div>
-        <HotspotMap />
+        <HotspotMap Alerts={Alerts} />
       </div>
     </div>
   );
 };
 
 export default Live;
-

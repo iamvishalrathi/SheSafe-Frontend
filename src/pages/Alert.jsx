@@ -7,12 +7,11 @@ import {
 
 const Alert = ({ lat, lng }) => {
   const [visible, setVisible] = useState(true);
-  const [isLong, setLong] = useState(false);
 
   return (
     visible && (
       <a
-        href={`https://maps.google.com/?q=${lat},${lng}`}
+        href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}
         target="_blank"
         className="bg-[#facc15]/20 border-l-4 border-yellow-400 text-yellow-300 px-4 py-2 rounded relative flex justify-between items-center"
       >
