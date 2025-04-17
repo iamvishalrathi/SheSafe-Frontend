@@ -1,68 +1,7 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import RippleButton from "./RippleButton";
 const Navbar = () => {
   return (
-    // <div className="flex flex-row h-[120px] p-8 justify-around items-center bg-[#180722] border-b-2 border-b-white">
-    //   <div className="flex flex-row justify-between items-center w-[1096px]">
-    //     <div className=" flex flex-col w-[154px] gap-0">
-    //       <span className="text-4xl text-white font-black font-sans italic text-center">
-    //         Safe
-    //       </span>
-    //       <span className="text-4xl text-white text-end">Watch</span>
-    //     </div>
-    //     <div className="flex flex-row justify-between items-center gap-4">
-    //       <NavLink
-    //         to="/"
-    //         className={({ isActive }) =>
-    //           ` ${
-    //             isActive ? "bg-slate-400" : " "
-    //           } text-lg px-2 rounded-lg text-white`
-    //         }
-    //       >
-    //         Home
-    //       </NavLink>
-    //       <NavLink
-    //         to="/live"
-    //         className={({ isActive }) =>
-    //           ` ${
-    //             isActive ? "bg-slate-400" : " "
-    //           } text-lg px-2 rounded-lg text-white`
-    //         }
-    //       >
-    //         Live
-    //       </NavLink>
-    //       <NavLink
-    //         to="/event"
-    //         className={({ isActive }) =>
-    //           ` ${
-    //             isActive ? "bg-slate-400" : " "
-    //           } text-lg px-2 rounded-lg text-white`
-    //         }
-    //       >
-    //         Event
-    //       </NavLink>
-    //       <NavLink
-    //         to="/contact"
-    //         className={({ isActive }) =>
-    //           ` ${
-    //             isActive ? "bg-slate-400" : " "
-    //           } text-lg px-2 rounded-lg text-white`
-    //         }
-    //       >
-    //         Contact
-    //       </NavLink>
-    //     </div>
-    //   </div>
-    //   <div className="flex flex-row justify-between items-center gap-2">
-    //     <Link className=" text-lg rounded-lg bg-[#E3E3E3] px-1 ">Sign in</Link>
-    //     <Link className=" text-lg text-white rounded-lg bg-[#2C2C2C] px-1">
-    //       Register
-    //     </Link>
-    //   </div>
-    // </div>
-
-    //---------------------------------------------------------------/Uttkarsh/--------------------------------------
     <nav>
       <div className="logo">
         <svg
@@ -134,10 +73,9 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="log">
-        <RippleButton text="Sign in" />
-        <RippleButton text="Register" />
-        {/* <button>Sign In</button> */}
+      <div>
+        <RippleButton text="Sign in" route="/signin" />
+        <RippleButton text="Register" route="/signup" />
       </div>
     </nav>
   );

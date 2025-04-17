@@ -38,8 +38,11 @@ const RippleButton = (props) => {
     };
   }, []);
 
+  // Use the route prop if provided, otherwise default to "/signin"
+  const route = props.route || "/signin";
+
   return (
-    <NavLink to={"/signin"}>
+    <NavLink to={route}>
       <button className="ripple-button mx-2" onClick={handleClick}>
         {props.text}
       </button>
