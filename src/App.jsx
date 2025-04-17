@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Live from "./pages/Live";
 import Navbar from "./components/Navbar";
 import Signin from "./pages/Signin";
+import Signup from "./pages/Signup"; // Add this import
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 
@@ -16,6 +17,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/" element={<Home />} />
           <Route path="/live" element={<Live />} />
           <Route path="/event" element={<Event />} />
