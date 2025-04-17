@@ -10,7 +10,11 @@ import Image from "../components/Image";
 import Footer from "../components/Footer";
 // Add this import at the top
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShieldAlt, faEye, faChartLine } from "@fortawesome/free-solid-svg-icons";
+import {
+  faShieldAlt,
+  faEye,
+  faChartLine,
+} from "@fortawesome/free-solid-svg-icons";
 import Eyes from "../components/Home/eye";
 import { Link } from "react-router-dom";
 
@@ -32,7 +36,8 @@ const Home = () => {
         stagger: 0.3,
         ease: "power2.inOut",
       })
-      .from(".hero p", { // Removed video from this animation
+      .from(".hero p", {
+        // Removed video from this animation
         yPercent: 10,
         opacity: 0,
         stagger: 0.2,
@@ -58,7 +63,7 @@ const Home = () => {
       },
     });
   });
-  
+
   // Modify this animation to prevent overlap
   useGSAP(() => {
     gsap.to(".video", {
@@ -73,7 +78,7 @@ const Home = () => {
       },
     });
   });
-  
+
   // Remove or modify this pin to prevent overlap
   // useGSAP(() => {
   //   ScrollTrigger.create({
@@ -138,65 +143,74 @@ const Home = () => {
         </div>
 
         {/* Add a spacer to prevent overlap */}
-        <div className="h-[100vh]"></div>
+        <div className="h-[50vh]"></div>
 
         {/* Redesigned about-this section with title */}
-        <div className="about-this">
-          <h2 className="section-title">Our Mission</h2>
-          <div className="features-container">
-            <div className="page page-1 mb-16">
-              <div className="flex items-center mb-4">
-                <FontAwesomeIcon icon={faShieldAlt} className="text-3xl text-[#218EA6] mr-4" />
-                <h2 className="text-3xl font-bold">
-                  Empowering Women's Safety with AI
-                </h2>
-              </div>
-              <p className="text-lg font-semibold tracking-wide leading-8 my-3">
-                SafeWatch is an AI-driven platform designed to enhance women's
-                safety in public spaces. By leveraging real-time monitoring,
-                anomaly detection, and gesture recognition, our system
-                proactively identifies potential threats and alerts authorities,
-                ensuring a safer environment for women everywhere.
-              </p>
+        {/*<div className="about-this">*/}
+        <h2 className="section-title">Our Mission</h2>
+        <div className="features-container">
+          <div className="page page-1 mb-16">
+            <div className="flex items-center mb-4">
+              <FontAwesomeIcon
+                icon={faShieldAlt}
+                className="text-3xl text-[#218EA6] mr-4"
+              />
+              <h2 className="text-3xl font-bold">
+                Empowering Women's Safety with AI
+              </h2>
             </div>
+            <p className="text-lg font-semibold tracking-wide leading-8 my-3">
+              SafeWatch is an AI-driven platform designed to enhance women's
+              safety in public spaces. By leveraging real-time monitoring,
+              anomaly detection, and gesture recognition, our system proactively
+              identifies potential threats and alerts authorities, ensuring a
+              safer environment for women everywhere.
+            </p>
+          </div>
 
-            <div className="page page-2 mb-16 p-8 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-lg shadow-lg">
-              <div className="flex items-center mb-4">
-                <FontAwesomeIcon icon={faEye} className="text-3xl text-[#218EA6] mr-4" />
-                <h2 className="text-3xl font-bold text-white">
-                  Real-Time Threat Detection
-                </h2>
-              </div>
-              <p className="text-lg font-semibold tracking-wide leading-8 text-white my-3">
-                Our innovative solution combines advanced computer vision and
-                machine learning to monitor gender distribution and recognize
-                unusual patterns. SafeWatch continuously analyzes public areas,
-                identifying risks such as lone women at night or women
-                surrounded by men, and generates immediate alerts to prevent
-                incidents.
-              </p>
+          <div className="page page-2 mb-16 p-8 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-lg shadow-lg">
+            <div className="flex items-center mb-4">
+              <FontAwesomeIcon
+                icon={faEye}
+                className="text-3xl text-[#218EA6] mr-4"
+              />
+              <h2 className="text-3xl font-bold text-white">
+                Real-Time Threat Detection
+              </h2>
             </div>
+            <p className="text-lg font-semibold tracking-wide leading-8 text-white my-3">
+              Our innovative solution combines advanced computer vision and
+              machine learning to monitor gender distribution and recognize
+              unusual patterns. SafeWatch continuously analyzes public areas,
+              identifying risks such as lone women at night or women surrounded
+              by men, and generates immediate alerts to prevent incidents.
+            </p>
+          </div>
 
-            <div className="page page-3 mb-16 p-8 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-lg shadow-lg">
-              <div className="flex items-center mb-4">
-                <FontAwesomeIcon icon={faChartLine} className="text-3xl text-[#218EA6] mr-4" />
-                <h2 className="text-3xl font-bold text-white">
-                  Data-Driven Safety Planning
-                </h2>
-              </div>
-              <p className="text-lg font-semibold tracking-wide leading-8 text-white my-3">
-                SafeWatch goes beyond real-time protection by offering
-                data-driven insights through hotspot mapping. By identifying
-                areas with frequent incidents, our platform enables city
-                planners and law enforcement to strategically allocate resources
-                and develop targeted safety initiatives for long-term impact.
-              </p>
+          <div className="page page-3 mb-16 p-8 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-lg shadow-lg">
+            <div className="flex items-center mb-4">
+              <FontAwesomeIcon
+                icon={faChartLine}
+                className="text-3xl text-[#218EA6] mr-4"
+              />
+              <h2 className="text-3xl font-bold text-white">
+                Data-Driven Safety Planning
+              </h2>
             </div>
+            <p className="text-lg font-semibold tracking-wide leading-8 text-white my-3">
+              SafeWatch goes beyond real-time protection by offering data-driven
+              insights through hotspot mapping. By identifying areas with
+              frequent incidents, our platform enables city planners and law
+              enforcement to strategically allocate resources and develop
+              targeted safety initiatives for long-term impact.
+            </p>
           </div>
         </div>
 
         <div className="stats-section py-16 bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a]">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Our Impact</h2>
+          <h2 className="text-3xl font-bold text-white text-center mb-12">
+            Our Impact
+          </h2>
           <div className="flex justify-center gap-16">
             <div className="stat-item text-center">
               <h3 className="text-4xl font-bold text-white mb-2">95%</h3>
